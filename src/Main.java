@@ -1,32 +1,36 @@
 import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
+        Dispositivo dispositivo1 = new Dispositivo();
+        Dispositivo dispositivo2 = new Dispositivo();
 
-        // Crear los dos objetos
-        Dispositivos dispositivo1 = new Dispositivos();
-        Dispositivos dispositivo2 = new Dispositivos();
-
-        // Asignar datos usando SET
         dispositivo1.setNombre("Laptop");
         dispositivo1.setTipo("Computadora");
-        dispositivo1.setActivo(false);
+        dispositivo1.setActivo(true);
 
-        dispositivo2.setNombre("Celular");
-        dispositivo2.setTipo("Smartphone");
-        dispositivo2.setActivo(true);
+        dispositivo2.setNombre("Mouse");
+        dispositivo2.setTipo("Periferico");
+        dispositivo2.setActivo(false);
 
-        // Mostrar información
-        System.out.println(" DISPOSITIVO 1 MODIFICADO");
-        dispositivo1.mostrarInformacion();
+        System.out.println("Dispositivo 1");
+        System.out.println("Nombre: " + dispositivo1.getNombre());
+        System.out.println("Tipo: " + dispositivo1.getTipo());
+        System.out.println("Activo: " + dispositivo1.isActivo());
 
-        // Modificar dispositivo 1
-        dispositivo1.setNombre("PC Gamer");
-        System.out.println("\n DISPOSITIVO 1 MODIFICADO ");
-        dispositivo1.mostrarInformacion();
+        System.out.println();
 
-        // Activar dispositivo 2
+        System.out.println("Dispositivo 2");
+        System.out.println("Nombre: " + dispositivo2.getNombre());
+        System.out.println("Tipo: " + dispositivo2.getTipo());
+        System.out.println("Activo: " + dispositivo2.isActivo());
+
         dispositivo2.activar();
-        System.out.println("DISPOSITIVO 2 ACTUALIZADO");
-        dispositivo2.mostrarInformacion();
+        System.out.println("Estado del mouse despues de activar: "
+                + dispositivo2.isActivo());
+
+        dispositivo1.desactivar();
+        System.out.println("Estado de la laptop despues de desactivar: "
+                + dispositivo1.isActivo());
     }
 }
